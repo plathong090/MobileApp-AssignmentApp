@@ -8,22 +8,26 @@
     android:orientation="vertical"
     tools:context=".CalculateGrade">
 
+    <!-- calculate grade -->
     <TextView
         android:id="@+id/textCalGrade"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:text="Calculate Grade"
         android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold" />
 
+    <!-- จัด lineaerlayout เป็น horizontal
+    เพื่อให้ enter score กับ textfeild ต่อกัน -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="20dp">
 
+        <!-- Enter score -->
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
@@ -33,17 +37,20 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
+        <!-- text feild -->
         <EditText
-            android:id="@+id/input1"
+            android:id="@+id/InputScore"
             android:layout_width="161dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:ems="10"
-            android:inputType="number|numberDecimal"
-            android:text="ใส่ตัวเลขทศนิยม" />
+            android:hint="ใส่ตัวเลขทศนิยม"
+            android:inputType="text" />
 
     </LinearLayout>
 
+    <!-- จัด lineaerlayout เป็นปกติ
+    และ set center button -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,13 +58,14 @@
         android:gravity="center_horizontal">
 
         <Button
-            android:id="@+id/CalBtn"
+            android:id="@+id/CalGradeBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Calculate" />
 
     </LinearLayout>
 
+    <!-- จัด lineaerlayout เป็น horizontal -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -74,7 +82,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/output1"
+            android:id="@+id/OutputGrade"
             android:layout_width="161dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -102,7 +110,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/output2"
+            android:id="@+id/ResultGrade"
             android:layout_width="161dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -111,6 +119,22 @@
             android:focusable="false"
             android:inputType="text"
             android:text="" />
+
+    </LinearLayout>
+
+    <!-- set left button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:gravity="left">
+
+        <Button
+            android:id="@+id/BackGradeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back" />
 
     </LinearLayout>
 

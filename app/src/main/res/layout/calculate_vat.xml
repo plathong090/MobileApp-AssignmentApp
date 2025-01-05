@@ -9,12 +9,158 @@
     tools:context=".CalculateVat">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/CalVattxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:text="Calculate Vat Product"
         android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold" />
+
+    <!-- จัด lineaerlayout เป็น horizontal
+    เพื่อให้ textView กับ textfeild ต่อกัน -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <!-- Enter score -->
+        <TextView
+            android:id="@+id/EnterPricetxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Enter Price : "
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- text feild -->
+        <EditText
+            android:id="@+id/input1"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:ems="10"
+            android:inputType="number|numberDecimal"
+            android:text="ใส่ราคาสินค้าเป็นตัวเลขทศนิยม" />
+
+    </LinearLayout>
+
+    <!-- จัด lineaerlayout เป็นปกติ
+    และ set center button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/CalBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculate" />
+
+    </LinearLayout>
+
+    <!-- จัด lineaerlayout เป็น horizontal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/Pricetxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Price : "
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/output1"
+            android:layout_width="161dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:clickable="false"
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="text"
+            android:text="" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/Vattxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Vat : "
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/output2"
+            android:layout_width="161dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:clickable="false"
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="text"
+            android:text="" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/Totaltxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Total : "
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/output3"
+            android:layout_width="161dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:clickable="false"
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="text"
+            android:text="" />
+
+    </LinearLayout>
+
+    <!-- set left button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:gravity="left">
+
+        <Button
+            android:id="@+id/BackVatBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back" />
+
+    </LinearLayout>
 </LinearLayout>
