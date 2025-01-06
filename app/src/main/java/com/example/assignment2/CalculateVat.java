@@ -59,6 +59,14 @@ public class CalculateVat extends AppCompatActivity implements View.OnClickListe
                 if (price >= 0) {
                     PriceVat.setText(input); //แสดงค่าที่ input เข้ามาในช่อง price
 
+                    //calculate และแปลงให้โชว์เป็นทศนิยม
+                    double vat = price * 0.07;
+                    String formatVat = String.format("%.2f" , vat);
+                    Vatvat.setText(formatVat);
+
+                    double total = vat + price;
+                    String formatTotal = String.format("%.2f" , total);
+                    TotalVat.setText(formatTotal);
 
                 } else {
                     Toast.makeText(this, "ราคา " + price + " ไม่ถูกต้อง", Toast.LENGTH_SHORT).show();
