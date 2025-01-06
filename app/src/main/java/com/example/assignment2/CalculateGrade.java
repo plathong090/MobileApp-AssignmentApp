@@ -24,7 +24,7 @@ public class CalculateGrade extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.calculate_grade);
 
         InputScore = findViewById(R.id.InputScore);
-        InputScore.setHint("ใส่ตัวเลขทศนิยม");
+        InputScore.setHint("ใส่ตัวเลข");
 
         OutputGrade = findViewById(R.id.OutputGrade);
         ResultGrade = findViewById(R.id.ResultGrade);
@@ -77,6 +77,20 @@ public class CalculateGrade extends AppCompatActivity implements View.OnClickLis
                 } else {
                     grade = "F";
                 }
+
+//                grade = score >= 101 ? "" :
+//                score >= 80 ? "A" :
+//                score >= 75 ? "B+" :
+//                score >= 70 ? "B" :
+//                score >= 65 ? "C+" :
+//                score >= 60 ? "C" :
+//                score >= 55 ? "D+" :
+//                score >= 50 ? "D" :
+//                "F";
+//                if(grade == "error") {
+//                    Toast.makeText(this, "คะแนน " + score + " ไม่ถูกต้อง", Toast.LENGTH_SHORT).show();
+//
+//                }
 
                 //แสดงผล
                 OutputGrade.setText(String.valueOf(score));

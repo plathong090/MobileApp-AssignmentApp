@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:ems="10"
-            android:hint="ใส่ตัวเลขทศนิยม"
+            android:hint="ใส่ตัวเลข"
             android:inputType="text" />
 
     </LinearLayout>
