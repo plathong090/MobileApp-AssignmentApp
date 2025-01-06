@@ -34,6 +34,7 @@ public class CalculateVat extends AppCompatActivity implements View.OnClickListe
         PriceVat = findViewById(R.id.PriceVat);
         Vatvat = findViewById(R.id.Vatvat);
         TotalVat = findViewById(R.id.TotalVat);
+
     }
 
     @Override
