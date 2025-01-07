@@ -1,5 +1,6 @@
 package com.example.assignment2;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,9 +25,11 @@ public class CalculateVat extends AppCompatActivity implements View.OnClickListe
 
         BackVatBtn = findViewById(R.id.BackVatBtn);
         BackVatBtn.setOnClickListener(this);
+        BackVatBtn.setBackgroundColor(Color.parseColor("#964B00"));
 
         CalBtnVat = findViewById(R.id.CalBtnVat);
         CalBtnVat.setOnClickListener(this);
+        CalBtnVat.setBackgroundColor(Color.parseColor("#964B00"));
 
         inputPrice = findViewById(R.id.inputVat);
         inputPrice.setHint("ใส่ราคาสินค้าเป็นตัวเลข");

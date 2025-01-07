@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.graphics.Color;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,11 +33,12 @@ public class CalculateGrade extends AppCompatActivity implements View.OnClickLis
         //ปุ่มย้อนกลับหน้าหลัก
         BackBtn = findViewById(R.id.BackGradeBtn);
         BackBtn.setOnClickListener(this);
+        BackBtn.setBackgroundColor(Color.parseColor("#964B00"));
 
         //ปุ่มคำนวณ
         CalGradeBtn = findViewById(R.id.CalGradeBtn);
         CalGradeBtn.setOnClickListener(this);
-
+        CalGradeBtn.setBackgroundColor(Color.parseColor("#964B00"));
     }
 
     @Override
@@ -77,20 +79,6 @@ public class CalculateGrade extends AppCompatActivity implements View.OnClickLis
                 } else {
                     grade = "F";
                 }
-
-//                grade = score >= 101 ? "" :
-//                score >= 80 ? "A" :
-//                score >= 75 ? "B+" :
-//                score >= 70 ? "B" :
-//                score >= 65 ? "C+" :
-//                score >= 60 ? "C" :
-//                score >= 55 ? "D+" :
-//                score >= 50 ? "D" :
-//                "F";
-//                if(grade == "error") {
-//                    Toast.makeText(this, "คะแนน " + score + " ไม่ถูกต้อง", Toast.LENGTH_SHORT).show();
-//
-//                }
 
                 //แสดงผล
                 OutputGrade.setText(String.valueOf(score));

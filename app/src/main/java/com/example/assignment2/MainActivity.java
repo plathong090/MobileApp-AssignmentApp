@@ -38,9 +38,6 @@ public class MainActivity extends AppCompatActivity {
         GradeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText( MainActivity.this, "Call page 2", Toast.LENGTH_LONG).show();
-
-                //เรียกหน้า calculate grade โดยตั้งตัวแปร
                 Intent calculategradepage = new Intent(MainActivity.this , CalculateGrade.class);
                 startActivity(calculategradepage); //ใช้เรียกตัวแปรให้ทำตามคำสั่งเพื่อเริ่มโปรแกรม
             }
@@ -68,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         ExitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish(); //ปิดโปรแกรม
+                finish();
             }
         });
     }

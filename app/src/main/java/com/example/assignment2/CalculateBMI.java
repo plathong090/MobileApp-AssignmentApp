@@ -39,7 +39,7 @@ public class CalculateBMI extends AppCompatActivity implements View.OnClickListe
         HeightInput.setHint("ใส่ส่วนสูงเป็นหน่วยเซนติเมตร");
 
         WeightBMI = findViewById(R.id.WeightBMI);
-        HeightInput = findViewById(R.id.HeightInput);
+        HeightBMI = findViewById(R.id.HeigthBMI);
         TotalBMI = findViewById(R.id.TotalBMI);
 
     }
@@ -74,11 +74,11 @@ public class CalculateBMI extends AppCompatActivity implements View.OnClickListe
             String resultWeight = String.format("%.2f" , inputWeight) + " กิโลกรัม";
             WeightBMI.setText(resultWeight);
 
-//            String resultHeight = String.format("%.2f" , inputHeight) + " เซนติเมตร";
-//            HeightBMI.setText(resultHeight);
-//
-//            String resultTotal = String.format("%.2f" , bmi);
-//            TotalBMI.setText(resultTotal);
+            String resultHeight = String.format("%.2f" , inputHeight) + " เซนติเมตร";
+            HeightBMI.setText(resultHeight);
+
+            String resultTotal = String.format("%.2f" , bmi);
+            TotalBMI.setText(resultTotal);
 
             // ล้างค่าหลังจากประมวลผล
             WeightInput.setText("");
