@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CalculateBMI">
+    tools:context=".CalculateBMI"
+    android:background="@color/background_color">
 
     <TextView
         android:id="@+id/CalBMItxt"
@@ -49,13 +50,11 @@
 
         <!-- text feild -->
         <EditText
-            android:id="@+id/input1"
+            android:id="@+id/WeightInput"
             android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:ems="10"
-            android:inputType="number|numberDecimal"
-            android:text="ใส่น้ำหนักเป็นหน่วยกิโลกรัม" />
+            android:ems="10" />
     </LinearLayout>
 
     <!-- HEIGHT -->
@@ -77,13 +76,12 @@
 
         <!-- text feild -->
         <EditText
-            android:id="@+id/input2"
+            android:id="@+id/HeightInput"
             android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:ems="10"
-            android:inputType="number|numberDecimal"
-            android:text="ใส่ส่วนสูงเป็นหน่วยเซนติเมตร" />
+            />
     </LinearLayout>
     <!-- จัด lineaerlayout เป็นปกติ
     และ set center button -->
@@ -94,7 +92,7 @@
         android:gravity="center_horizontal">
 
         <Button
-            android:id="@+id/CalBtn"
+            android:id="@+id/CalBMIBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Calculate" />
@@ -118,7 +116,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/output1"
+            android:id="@+id/WeightBMI"
             android:layout_width="161dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -146,7 +144,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/output2"
+            android:id="@+id/HeigthBMI"
             android:layout_width="161dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -174,7 +172,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/output3"
+            android:id="@+id/TotalBMI"
             android:layout_width="161dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="37dp"

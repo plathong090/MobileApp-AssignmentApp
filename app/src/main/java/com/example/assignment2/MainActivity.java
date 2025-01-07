@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import android.graphics.Color;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,9 +23,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         GradeBtn = findViewById(R.id.GradeBtn);
+        GradeBtn.setBackgroundColor(Color.parseColor("#964B00"));
+
         VatBtn = findViewById(R.id.VatBtn);
+        VatBtn.setBackgroundColor(Color.parseColor("#964B00"));
+
         BmiBtn = findViewById(R.id.BmiBtn);
+        BmiBtn.setBackgroundColor(Color.parseColor("#964B00"));
+
         ExitBtn = findViewById(R.id.ExitBtn);
+        ExitBtn.setBackgroundColor(Color.parseColor("#964B00"));
 
         //ปุ่มเรียกไปหน้า calculate grade
         GradeBtn.setOnClickListener(new View.OnClickListener() {
