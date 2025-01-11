@@ -1,23 +1,19 @@
 package com.example.assignment2;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.graphics.Color;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class CalculateBMI extends AppCompatActivity implements View.OnClickListener {
 
     private Button BackBMIBtn , CalBMIBtn;
     private EditText WeightInput , HeightInput , WeightBMI , HeightBMI , TotalBMI;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,10 +52,12 @@ public class CalculateBMI extends AppCompatActivity implements View.OnClickListe
     public void calculate() {
         String weight = WeightInput.getText().toString();
         String height = HeightInput.getText().toString();
-
         String numberPattern = "^[0-9]+(\\.[0-9]+)?$";
 
         if (weight.isEmpty() || height.isEmpty()) {
+            WeightBMI.setText("");
+            HeightBMI.setText("");
+            TotalBMI.setText("");
             Toast.makeText(this, "กรุณากรอกข้อมูลให้ครบถ้วน", Toast.LENGTH_SHORT).show();
 
         } else if (!weight.matches(numberPattern) || !height.matches(numberPattern)) {
@@ -67,20 +65,17 @@ public class CalculateBMI extends AppCompatActivity implements View.OnClickListe
 
         } else {
             float inputWeight = Float.parseFloat(weight);
-            float inputHeight = Float.parseFloat(height);
-
-            float bmi = inputWeight / ((inputHeight / 100) * (inputHeight / 100));
-
             String resultWeight = String.format("%.2f" , inputWeight) + " กิโลกรัม";
             WeightBMI.setText(resultWeight);
 
+            float inputHeight = Float.parseFloat(height);
             String resultHeight = String.format("%.2f" , inputHeight) + " เซนติเมตร";
             HeightBMI.setText(resultHeight);
 
+            float bmi = inputWeight / ((inputHeight / 100) * (inputHeight / 100));
             String resultTotal = String.format("%.2f" , bmi);
             TotalBMI.setText(resultTotal);
 
-            // ล้างค่าหลังจากประมวลผล
             WeightInput.setText("");
             HeightInput.setText("");
         }

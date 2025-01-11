@@ -6,12 +6,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.graphics.Color;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class CalculateGrade extends AppCompatActivity implements View.OnClickListener {
 
@@ -45,7 +41,6 @@ public class CalculateGrade extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         if (v.getId() == R.id.CalGradeBtn) {
             calculate();
-
         } else if (v.getId() == R.id.BackGradeBtn) {
             finish();
         }
@@ -54,14 +49,16 @@ public class CalculateGrade extends AppCompatActivity implements View.OnClickLis
     private void calculate() {
         String input = InputScore.getText().toString();
 
-        //check การกรอก input
         if (!input.isEmpty()) {
             try {
-                int score = Integer.parseInt(input); //ตรวจสอบว่า score เป็นตัวเลขหรือไม่
+                int score = Integer.parseInt(input);
                 String grade = "";
 
                 if (score >= 101) {
-                    Toast.makeText(this, "คะแนน " + score + " ไม่ถูกต้อง", Toast.LENGTH_SHORT).show();
+                    OutputGrade.setText("");
+                    ResultGrade.setText("");
+                    Toast.makeText(this, "คะแนน " + score + " ไม่ถูกต้อง",
+                            Toast.LENGTH_SHORT).show();
                 } else if (score >= 80) {
                     grade = "A";
                 } else if (score >= 75) {
@@ -80,14 +77,12 @@ public class CalculateGrade extends AppCompatActivity implements View.OnClickLis
                     grade = "F";
                 }
 
-                //แสดงผล
-                OutputGrade.setText(String.valueOf(score));
-                ResultGrade.setText(grade);
-
-                //ล้างช่อง InputScore และตั้งค่า Hint ใหม่
-                InputScore.setText(""); // ล้างช่องกรอก
-                InputScore.setHint("ใส่ตัวเลขทศนิยม่"); // ตั้งค่า Hint เดิม
-
+                if (score <= 100) {
+                    OutputGrade.setText(String.valueOf(score));
+                    ResultGrade.setText(grade);
+                }
+                InputScore.setText("");
+                InputScore.setHint("ใส่ตัวเลข");
             } catch (NumberFormatException e) {
                 //ถ้า score ไม่เป็นตัวเลขจะแจ้ง toast
                 Toast.makeText(this, "กรุณากรอกคะแนนเป็นตัวเลข", Toast.LENGTH_SHORT).show();
@@ -96,8 +91,5 @@ public class CalculateGrade extends AppCompatActivity implements View.OnClickLis
             //ถ้า input empty จะ toast
             Toast.makeText(this, "กรุณากรอกคะแนน", Toast.LENGTH_SHORT).show();
         }
-
-
     }
-
 }
